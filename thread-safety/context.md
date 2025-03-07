@@ -1,0 +1,6 @@
+- Locks
+- Mutual Execution
+- Thead Safety
+- Parallelism
+- Concurrency
+- Speed
