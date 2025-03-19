@@ -3,10 +3,17 @@
 // use rand::Rng; used for gussing_game
 
 
+
+
 // This file contains the examples of rustbook.
 fn main() {
     println!("Hello, world!"); // Hello, world!
 
+
+
+    // control_flow();
+
+    // two_d_array();
 
 
     // data_types();
@@ -14,8 +21,149 @@ fn main() {
     // variables_and_mutability();
 
     // guessing_game();
+
+    // println!("{}",check_even(1211, false ));
+
+    // statement_vs_expression();
+
+    // println!("result = {}", temperature_converter(1.0, 'c'));
+
+    fibs(5);
 }
 
+// nth fibonacchi
+fn fibs(n: u32) {
+    // F(n)=F(n−1)+F(n−2)
+    // let mut a = 0;
+    // let mut b = 1;
+    // let mut count = 0;
+    // loop {
+    //     if count == n {
+    //         break;
+    //     }
+    //     println!("{}", a);
+    //     a , b = b, a+b;
+    //     count +=1;
+    // }
+    let mut a = 0;
+    let mut b = 1;
+    for _ in 0..n {
+        println!("{}", a);
+        a = b;
+        b = a + b;
+    }
+}
+
+// temperature converter
+// fn temperature_converter(value: f64, unit: char ) -> f64 {
+
+//     match unit {
+//         'c' | 'C' => celcius_to_farenhite(value), // we can also add return here.
+//         'f' | 'F' => farenhite_to_celcius(value),
+//         _ => panic!("unit must be 'c' or 'C' for celcius and 'f' or 'F' for farenhite"),
+
+//     }
+// }
+
+// fn celcius_to_farenhite(value: f64) -> f64 {
+//     let farenhite: f64 = {
+//         let celcius = value;
+//         celcius * (9.0 / 5.0) + 32.0
+//     };
+
+//     return farenhite;
+// }
+
+// fn farenhite_to_celcius(value: f64) -> f64{
+//         (value - 32 as f64) * 5 as f64 / 9 as f64 
+// }
+
+
+// fn control_flow(){
+
+    
+//         let number = 6;
+    
+//         if number % 4 == 0 {
+//             println!("number is divisible by 4");
+//         } else if number % 3 == 0 {
+//             println!("number is divisible by 3");
+//         } else if number % 2 == 0 {
+//             println!("number is divisible by 2");
+//         } else {
+//             println!("number is not divisible by 4, 3, or 2");
+//         }
+    
+//     // let check_even = if number % 2 == 0 {true} else {false};
+
+//     let mut count = 0;
+
+//     'outer_loop: loop {
+//         count += 3;
+
+//         'inner_loop: loop {
+//             if count == 8 {
+//                 break  'inner_loop;
+//             }
+//             count +=1;
+//         }
+//         if count % 2 == 0 {
+//             break 'outer_loop; 
+//         }
+//     }
+
+//     while count < 10 {
+//         count +=1;
+//     }
+
+//     let arr = [10; 5];
+
+//     for i in 0..=arr.len()-1 {
+//         println!("{}", arr[i]);
+//     }
+// }
+
+
+// #[allow(unreachable_patterns)]
+// fn check_even(n: u32, c: bool) -> bool {
+//     match c {
+//         true => {
+//             let is_even: bool = if n % 2 == 0 { true } else { false };
+//             is_even
+//         }
+//         false => {
+//             println!("Checked cancel as c: {}", c);
+//             false
+//         }
+//         _ => {
+//             eprint!("Error Happed");
+//             return false
+//         }
+//     }
+// }
+
+// fn statement_vs_expression() -> (i32, i32) {
+
+//     // this is a statement
+
+//     let number = 23;
+
+//     // this is a expression
+
+//     let area = {
+//         let length = 120;
+
+//         let bredth = 140;
+
+//         length * bredth
+//     };
+
+//     // return (number, area);
+
+//     // can be done like this
+
+//     (number, area)
+// }
 
 // #[allow(unused)]
 // fn data_types() {
